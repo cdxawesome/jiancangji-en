@@ -1,1 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>StockNote · Smart Inventory Management</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; }
+    body {
+      font-family: "Helvetica Neue", Arial, sans-serif;
+      margin: 0; padding: 0;
+      line-height: 1.7;
+      background: #f5f7fa;
+      color: #333;
+    }
+    /* ── Header ── */
+    header {
+      background: linear-gradient(135deg, #3dba6e 0%, #2a9d5c 100%);
+      color: white;
+      padding: 3rem 1rem 2.5rem;
+      text-align: center;
+    }
+    header h1 { margin: 0 0 0.4rem; font-size: 2.2rem; letter-spacing: 2px; }
+    header .subtitle { font-size: 1.1rem; opacity: 0.9; margin: 0; }
+    .badge-row { margin-top: 1.2rem; display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; }
+    .badge {
+      display: inline-block;
+      background: rgba(255,255,255,0.18);
+      border: 1px solid rgba(255,255,255,0.4);
+      border-radius: 20px;
+      padding: 4px 14px;
+      font-size: 0.82rem;
+    }
+    /* ── Layout ── */
+    main { max-width: 920px; margin: 2rem auto; padding: 0 1rem; }
+    section {
+      background: white;
+      margin-bottom: 1.5rem;
+      padding: 1.8rem;
+      border-radius: 12px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.07);
+    }
+    section h2 { margin-top: 0; color: #2a9d5c; font-size: 1.25rem; border-left: 4px solid #3dba6e; padding-left: 10px; }
+    section h3 { color: #444; font-size: 1rem; margin: 1.2rem 0 0.5rem; }
+    ul { padding-left: 1.4rem; margin: 0.4rem 0; }
+    li { margin-bottom: 0.3rem; }
+    /* ── Feature Grid ── */
+    .feature-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 1rem;
+      margin-top: 0.8rem;
+    }
+    .feature-card {
+      background: #f0faf4;
+      border-radius: 10px;
+      padding: 1rem 1.1rem;
+      border-left: 3px solid #3dba6e;
+    }
+    .feature-card .icon { font-size: 1.6rem; margin-bottom: 0.4rem; }
+    .feature-card h4 { margin: 0 0 0.35rem; font-size: 0.95rem; color: #2a9d5c; }
+    .feature-card p { margin: 0; font-size: 0.85rem; color: #555; }
+    /* ── Language ── */
+    .lang-row { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 0.6rem; }
+    .lang-tag {
+      background: #eef8f2;
+      border: 1px solid #b2dfca;
+      border-radius: 6px;
+      padding: 3px 12px;
+      font-size: 0.85rem;
+      color: #2a9d5c;
+    }
+    /* ── Footer ── */
+    footer {
+      text-align: center;
+      padding: 1.6rem;
+      background: #2c2c2c;
+      color: #ccc;
+      margin-top: 2rem;
+      font-size: 0.9rem;
+    }
+    footer a { color: #3dba6e; text-decoration: none; }
+    footer a:hover { text-decoration: underline; }
+    @media (max-width: 600px) {
+      header h1 { font-size: 1.6rem; }
+      .feature-grid { grid-template-columns: 1fr 1fr; }
+    }
+  </style>
+</head>
+<body>
 
+<header>
+  <h1>StockNote</h1>
+  <p class="subtitle">Lightweight, Offline, Full-featured Smart Inventory Management</p>
+  <div class="badge-row">
+    <span class="badge">📦 Multi-Warehouse</span>
+    <span class="badge">📊 Statistics</span>
+    <span class="badge">🔔 Stock Alerts</span>
+    <span class="badge">🌐 7 Languages</span>
+    <span class="badge">🔒 Fully Offline</span>
+  </div>
+</header>
+
+<main>
+
+  <!-- App Overview -->
+  <section>
+    <h2>App Overview</h2>
+    <p>StockNote is a lightweight, streamlined local inventory management app designed for individuals, small shops, studios, and multi-warehouse businesses. No account registration or internet connection required — all data is securely stored on your local device. From item entry and stock-in/out operations to data analytics and low-stock alerts, StockNote covers the entire inventory management workflow.</p>
+  </section>
+
+  <!-- Core Features -->
+  <section>
+    <h2>Core Features</h2>
+    <div class="feature-grid">
+
+      <div class="feature-card">
+        <div class="icon">📦</div>
+        <h4>Full Item Lifecycle Management</h4>
+        <p>Record name, English name, model, barcode, location, quantity, price, supplier, images, and description — all in one place.</p>
+      </div>
+
+      <div class="feature-card">
+        <div class="icon">🏭</div>
+        <h4>Multi-Warehouse Management</h4>
+        <p>Create multiple independent warehouses with fully isolated data and switch between them in one tap.</p>
+      </div>
+
+      <div class="feature-card">
+        <div class="icon">🔄</div>
+        <h4>Stock In / Out Records</h4>
+        <p>Every operation is logged in detail with undo support; a timeline view traces the full stock history of any individual item.</p>
+      </div>
+
+      <div class="feature-card">
+        <div class="icon">📊</div>
+        <h4>Data Analytics</h4>
+        <p>Daily and monthly stock-in/out summaries; multi-dimensional analysis by category, supplier, and unit.</p>
+      </div>
+
+      <div class="feature-card">
+        <div class="icon">🔔</div>
+        <h4>Stock Alerts</h4>
+        <p>Set a minimum threshold for each item — get automatic reminders when stock runs low to prevent stockouts.</p>
+      </div>
+
+      <div class="feature-card">
+        <div class="icon">🏷️</div>
+        <h4>Flexible Category System</h4>
+        <p>Create custom two-level categories with color labels and browse all items by category.</p>
+      </div>
+
+      <div class="feature-card">
+        <div class="icon">🚚</div>
+        <h4>Supplier Management</h4>
+        <p>Maintain supplier names, contacts, and phone numbers, and link items to their source supplier.</p>
+      </div>
+
+      <div class="feature-card">
+        <div class="icon">📐</div>
+        <h4>Unit Management</h4>
+        <p>Define custom measurement units (pieces, boxes, kilograms, etc.) to suit different industry needs.</p>
+      </div>
+
+      <div class="feature-card">
+        <div class="icon">📷</div>
+        <h4>Barcode Scanning</h4>
+        <p>Scan barcodes or QR codes to quickly locate or add items — fast and effortless.</p>
+      </div>
+
+      <div class="feature-card">
+        <div class="icon">🔍</div>
+        <h4>Full-Text Search</h4>
+        <p>Quickly search by name, English name, model, or barcode with smart search suggestions.</p>
+      </div>
+
+      <div class="feature-card">
+        <div class="icon">📂</div>
+        <h4>Batch Import &amp; Export</h4>
+        <p>Bulk-import item data via Excel; export inventory reports and images with sharing support.</p>
+      </div>
+
+      <div class="feature-card">
+        <div class="icon">🗑️</div>
+        <h4>Recycle Bin &amp; Data Protection</h4>
+        <p>Deleted items go to the recycle bin and can be restored; supplier and category snapshots are preserved to prevent data loss.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Multi-language -->
+  <section>
+    <h2>Multi-language Support</h2>
+    <p>7 built-in languages with runtime switching — ready for global use:</p>
+    <div class="lang-row">
+      <span class="lang-tag">🇨🇳 Simplified Chinese</span>
+      <span class="lang-tag">🇹🇼 Traditional Chinese</span>
+      <span class="lang-tag">🇺🇸 English</span>
+      <span class="lang-tag">🇯🇵 日本語</span>
+      <span class="lang-tag">🇰🇷 한국어</span>
+      <span class="lang-tag">🇪🇸 Español</span>
+      <span class="lang-tag">🇫🇷 Français</span>
+    </div>
+  </section>
+
+  <!-- Technology & Design -->
+  <section>
+    <h2>Technology &amp; Design</h2>
+    <ul>
+      <li><strong>Fully Offline</strong>: All data is stored locally — no account needed, your privacy stays in your hands.</li>
+      <li><strong>Fast &amp; Responsive</strong>: Built with Flutter for a smooth UI and instant interactions.</li>
+      <li><strong>Adaptive UI</strong>: Works perfectly on all screen sizes — iPhone and iPad alike.</li>
+      <li><strong>Modern Design</strong>: Clean Material-style interface that's intuitive and easy to use.</li>
+      <li><strong>Data Security</strong>: Local Hive database — fast operations, no data ever uploaded to the cloud.</li>
+    </ul>
+  </section>
+
+  <!-- Use Cases -->
+  <section>
+    <h2>Use Cases</h2>
+    <ul>
+      <li>🏪 Small retail stores and convenience shops — purchase, sales &amp; inventory tracking</li>
+      <li>🏭 Factories and warehouses — materials and finished goods stocktaking</li>
+      <li>🛠️ Studios and repair shops — consumables and tool management</li>
+      <li>🏠 Home organization and personal belongings</li>
+      <li>🎒 Personal collections and office supplies management</li>
+      <li>📦 E-commerce sellers — inventory tracking and restock reminders</li>
+    </ul>
+  </section>
+
+  <!-- Privacy Policy -->
+  <section>
+    <h2>Privacy Policy</h2>
+    <p>StockNote does not collect any personal information, requires no network permissions, and stores all data locally on your device. See the <a href="privacy.html" style="color:#2a9d5c;">Privacy Policy page</a> for details.</p>
+  </section>
+
+</main>
+
+<footer>
+  <p>Contact: <a href="mailto:manomaster@163.com">manomaster@163.com</a></p>
+  <p>&copy; 2025–2026 StockNote · All Rights Reserved</p>
+</footer>
+
+</body>
+</html>
